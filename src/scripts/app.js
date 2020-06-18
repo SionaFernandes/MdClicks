@@ -1,15 +1,11 @@
-import '../style/style.scss'
+export default class App {
 
+    constructor (d) {
+        console.log(d);
+        
+    }
 
-import {Component1} from './components/component1';
-
-
-
-console.log('app.js');
-new Component1('Works?');
-
-
-// new Fsd(
+}
 
 
 

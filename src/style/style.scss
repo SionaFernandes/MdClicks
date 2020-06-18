@@ -1,9 +1,3 @@
-@import './defaults/variables.scss';
-
-
-*{
-    background-color: $black;
-    color: #fff;
-    box-shadow: 3px 3px 0 #000;
-    // background-image: url('../assets/away.svg');
-}
+@import 'theme/library/all.scss';
+@import 'theme/configuration/all.scss';
+@import 'theme/components/all.scss';

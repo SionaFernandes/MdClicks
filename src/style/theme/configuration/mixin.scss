@@ -1,0 +1,113 @@
+$breakpoints: (
+  "phone-small": 320px,
+  "phone": 420px,
+  "phone-wide": 480px,
+  "phablet": 560px,
+  "tablet-small": 640px,
+  "tablet": 768px,
+  "tablet-wide": 1024px,
+  "desktop": 1248px,
+  "desktop-wide": 1440px,
+);
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+
+@mixin transition($property, $time: 0.3s, $animation: ease-in) {
+  transition: $property $time $animation;
+}
+
+@mixin bgImage($url, $repeat: no-repeat, $cover: cover, $center: center) {
+  background-image: url($url);
+  background-repeat: $repeat;
+  background-size: $cover;
+  background-position: $center;
+}
+
+@mixin button($width, $height, $bgColor, $radius: false) {
+  width: $width;
+  height: $height;
+  background-color: $bgColor;
+  @if $radius {
+    border-radius: $radius;
+  }
+}
+
+@mixin pseudo($height: false, $width: false, $radius: false, $position: false) {
+  content: "";
+  display: inline-block;
+  @if $height {
+    height: $height;
+  }
+  @if $width {
+    width: $width;
+  }
+  @if $radius {
+    border-radius: $radius;
+  }
+  @if $position {
+    position: $position;
+  }
+}
+
+@mixin positionAbsoluteCenter() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+// Converts fonts to rem
+@mixin font($size: false, $colour: false, $weight: false) {
+  @if $size {
+    font-size: ($size / 16) * 1rem;
+  }
+  @if $colour {
+    color: $colour;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+
+
+// Usage
+
+// Example
+// @include mq('tablet-wide') {
+//     padding-top: 4rem;
+//     font-size: 2.4rem;
+// }
+
+h1 {
+  @include pseudo(50px, 50px, 50%);
+  @include positionAbsoluteCenter();
+  @include button(180px, 30px, #000, 24px);
+  @include font(24, #fff, 400);
+  // @include bgImage('../', no-repeat, cover, center)
+}
+
+.button {
+  @include button(180px, 30px, #000, 24px);
+  text-align: center;
+  @include font(24, #fff, 400);
+  // @include bgImage('../', no-repeat, cover, center);
+}
+
+body {
+  @include mq("desktop-wide") {
+    background-color: #000;
+  }
+}

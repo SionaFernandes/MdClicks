@@ -1,32 +1,43 @@
-# To Start
+# Webpack Basic Setup
 
-- Run ```npm install```
-- We do this to install all npm packages since the node_modules foler is deleted at the time of pushing the project to github since the node_modules folder is huge.
+A simple webpack configuration for frontend projects.
 
-## Git Config
+### Installation
 
-- Add your new remote by running ```git remote set-url --add origin ADD_NEW_URL_HERE```
-- Remove the previous repo link by running: ```git remote set-url --delete origin https://github.com/NigelDcruz/webpack-starter.git```
+```
+npm install
+```
 
-## npm
+### Start Dev Server
 
-- Define Entry point based on you project
--  Use ```--save``` if the library will be used as part of our final code, which we ship to the server. (Eg: Lodash)
-- Make sure to save npm packages with ``` --save-dev ``` based on the package. (Eg: dev-server)
+```
+npm run start
+```
 
-## Webpack
+### Build Prod Version
 
-- To install ``` npm install webpack webpack-cli --save-dev```
+```
+npm run build
+```
 
-## For Development
+- This will replace/rebuild the dist/ folder.
+- A bundle.(random number).js is created. (The random nuber is for cache busting) 
+- The inline CSS is extracted from the bundle.(random number).js file and a new minified style.(random number).css file is created.
+- The Assets folder contains the Images and fonts with the respected images and fonts used.
+- Finally, a new index.html file is generated and all the other generated files and assets are linked to it.
 
-- Run ``` npm run start ```
-- This will open your project in a new tab along with running the live server.
+### Features:
 
+* SASS/SCSS
+* PostCSS (Autoprefixer, PurgeCss - Removes all unused CSS)
+* Image (jpeg,gif,svg,webp,png,jpg)
+* Fonts (woff,woff2,eot,ttf,otf)
+* ES6+ to Es5 with Babel
+* Hashing is used for cache busting.
 
-## For build
+### Plugins
 
-- Make sure to link the production ready js file. A random hash will be generated to the file so the name changes on every build.
-
-- Run ``` npm run build-prod ```
-
+* MiniCssExtractPlugin - Extracts Css in a seperate file
+* OptimizeCSSAssetsPlugin - Minifies the extracted CSS
+* HtmlWebpackPlugin - Creates a new index.html file in the dis folder and links the style and Js file from dist/
+* CleanWebpackPlugin - Deletes the old content from dist/ and rebuilds everything
