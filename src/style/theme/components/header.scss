@@ -1,0 +1,10 @@
+.header-image {
+  background-color: #2d2d2d;
+  @include bgImage("../assets/images/bg.jpeg", no-repeat, cover, center);
+  height: 100vh;
+  color: $white;
+  .social-links {
+    padding: 0;
+    list-style: none;
+  }
+}

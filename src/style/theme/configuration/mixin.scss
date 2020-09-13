@@ -91,23 +91,23 @@ $breakpoints: (
 //     font-size: 2.4rem;
 // }
 
-h1 {
-  @include pseudo(50px, 50px, 50%);
-  @include positionAbsoluteCenter();
-  @include button(180px, 30px, #000, 24px);
-  @include font(24, #fff, 400);
-  // @include bgImage('../', no-repeat, cover, center)
-}
+// h1 {
+//   @include pseudo(50px, 50px, 50%);
+//   @include positionAbsoluteCenter();
+//   @include button(180px, 30px, #000, 24px);
+//   @include font(24, #fff, 400);
+//   // @include bgImage('../', no-repeat, cover, center)
+// }
 
-.button {
-  @include button(180px, 30px, #000, 24px);
-  text-align: center;
-  @include font(24, #fff, 400);
-  // @include bgImage('../', no-repeat, cover, center);
-}
+// .button {
+//   @include button(180px, 30px, #000, 24px);
+//   text-align: center;
+//   @include font(24, #fff, 400);
+//   // @include bgImage('../', no-repeat, cover, center);
+// }
 
-body {
-  @include mq("desktop-wide") {
-    background-color: #000;
-  }
-}
+// body {
+//   @include mq("desktop-wide") {
+//     background-color: #000;
+//   }
+// }
