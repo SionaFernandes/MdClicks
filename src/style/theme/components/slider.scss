@@ -1,0 +1,28 @@
+.tabs-buttons {
+  height: auto;
+  box-shadow: inset 0 -2px #e6e6e6;
+  .swiper-wrapper {
+    display: flex;
+    justify-content: space-between;
+    .swiper-slide {
+      width: auto;
+      height: auto;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      &.active-tab {
+        opacity: 1;
+        border-bottom-color: red;
+      }
+    }
+  }
+}
+.tabs-content {
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    padding: 1rem 2rem;
+  }
+}
