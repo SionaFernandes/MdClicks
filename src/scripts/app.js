@@ -4,9 +4,10 @@ var tabs = document.querySelector(".tabs-buttons .swiper-wrapper");
 
 let tabButtons = new Swiper(".tabs-buttons", {
   slidesPerView: "auto",
+  preventInteractionOnTransition: true,
   freeMode: true,
   scrollbar: ".swiper-scrollbar",
-  mousewheelControl: true,
+  mousewheelControl: false,
   onTap: function (swiper, event) {
     if (
       event.target.classList.contains("swiper-slide") &&
