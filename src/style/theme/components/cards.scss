@@ -1,0 +1,34 @@
+.card {
+  border: 1px solid $black;
+  .rates {
+    margin-top: 30px;
+    font-size: 40px;
+    font-weight: 600;
+    span {
+      color: $red;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 700;
+      padding-left: 30px;
+    }
+  }
+  .price-details {
+    margin-top: 80px;
+  }
+  .price-details {
+    .strike {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 13px;
+        left: 0;
+        background: $gray;
+        width: 100px;
+        height: 2px;
+        margin: 0 auto;
+        right: 0;
+      }
+    }
+  }
+}
