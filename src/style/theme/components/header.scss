@@ -1,12 +1,23 @@
 .header-image {
-  background-color: #2d2d2d;
-  @include bgImage("../assets/images/bg.jpeg", no-repeat, cover, center);
+  background-color: $dark-grey;
+  @include bgImage("../assets/images/home-bg.png", no-repeat, cover, center);
   @include mq("tablet") {
     height: 100vh;
   }
   color: $white;
   .social-links {
-    padding: 0;
-    list-style: none;
+    svg {
+      @include mq("tablet") {
+        width: 30px;
+        height: 30px;
+      }
+    }
   }
+}
+.header-logo {
+  height: auto;
+}
+footer {
+  background-color: $dark-grey;
+  color: $white;
 }

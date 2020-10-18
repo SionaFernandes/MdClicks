@@ -1,7 +1,6 @@
 .card {
   border: 1px solid $black;
-  .rates {
-    margin-top: 30px;
+  .rates {    
     font-size: 40px;
     font-weight: 600;
     span {
@@ -9,11 +8,7 @@
       text-transform: uppercase;
       font-size: 13px;
       font-weight: 700;
-      padding-left: 30px;
     }
-  }
-  .price-details {
-    margin-top: 80px;
   }
   .price-details {
     .strike {
